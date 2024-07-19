@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+    background: linear-gradient(to right,rgb(16, 210, 249),rgb(196, 230, 249));
+    font-family: "Poppins","san-serif";
+}

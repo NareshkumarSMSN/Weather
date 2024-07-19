@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="weather-card">
+        <div class="Error" *ngIf="error">
+            City Not Found
+        </div>
+        <!-- <div class="Error" *ngIf="loading==true">
+            Loading
+        </div> -->
+        <div class="input-group mb-3">
+            <input type="text" class="font-control search-input" placeholder="Enter City Name" [(ngModel)]="cityName">
+            <button class="btn btn-primary search-btn" (click)="loadData()">Search</button>
+        </div>
+        <div class="weather-info">
+            <img src="https://openweathermap.org/img/wn/{{data.icon}}@2x.png" alt="weather-image">
+            <div class="temperature">{{(+data.temp-273.15).toFixed(2)}}</div>
+            <div class="description">{{data.base}}</div>
+        </div>
+        <div class="additional-info">
+            <div class="info-item">
+                <span>Feels Like : {{data.FeelsLike}}</span>
+            </div>
+            <div class="info-item">
+                <span>Pressure : {{data.Pressure}}</span>
+            </div>
+            <div class="info-item">
+                <span>Humidity : {{data.humidity}}</span>
+            </div>
+            <div class="info-item">
+                <span>City : {{data.name}}</span>
+            </div>
+        </div>
+    </div>
+</div>
