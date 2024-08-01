@@ -38,6 +38,7 @@ export class WeatherCardComponent implements  OnInit {
 
   loadData(){
     if(this.cityName){
+      this.loading=true;
       console.log(this.cityName)
       this.weatherService.fetchData(this.cityName).subscribe({
         next:(data:any)=>{
@@ -54,6 +55,7 @@ export class WeatherCardComponent implements  OnInit {
           this.data.humidity=data.main.humidity;
           //Error message Releaesing
           this.error='';
+          this.loading=false;
         },
         error:(err)=>{
           console.log("Error:",err);
@@ -61,9 +63,9 @@ export class WeatherCardComponent implements  OnInit {
           console.log(this.error);
         }
       });
-      
-    this.loading=false;
+    
   }
+  // this.loading=false;
   }
 
 }

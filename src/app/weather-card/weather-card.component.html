@@ -1,14 +1,33 @@
 <div class="container">
     <div class="weather-card">
-        <div class="Error" *ngIf="error">
+
+
+        <div class="container">
+            <svg viewBox="0 0 960 300">
+              <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="80%">Weather</text>
+              </symbol>
+          
+              <g class = "g-ants">
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+              </g>
+            </svg>
+          </div>
+
+
+        <div class="Error alert alert-danger    " *ngIf="error">
             City Not Found
         </div>
-        <!-- <div class="Error" *ngIf="loading==true">
+        <div class="Error alert alert-warning" *ngIf="loading==true">
             Loading
-        </div> -->
+        </div>
         <div class="input-group mb-3">
             <input type="text" class="font-control search-input" placeholder="Enter City Name" [(ngModel)]="cityName">
-            <button class="btn btn-primary search-btn" (click)="loadData()">Search</button>
+            <button class="btn btn-success search-btn" (click)="loadData()">Search</button>
         </div>
         <div class="weather-info">
             <img src="https://openweathermap.org/img/wn/{{data.icon}}@2x.png" alt="weather-image">
